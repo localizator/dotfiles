@@ -1,0 +1,227 @@
+#!/bin/sh
+#
+## ~/bin/conkyrun
+## author  : localizator <localizator@ukr.net>
+## website : https://github.com/localizator
+#
+
+                run="Run"
+		start="Starting"
+		stop="Stopping"
+                ok="OK"
+                usage="Usage"
+case $LANG in
+	uk* )
+		run="Запуск"
+		start="Триває запуск"
+		stop="Зупинка процесу"
+                ok="Успішно"
+                usage="Використання" ;;
+esac
+
+rhythmbox()   {
+        
+        echo -n "$start Conky... "
+        
+        /usr/bin/conky -c ~/.config/conky/config/rhythmbox
+
+        echo "$ok"
+
+}
+
+openbox()   {
+        
+        echo -n "$start Conky... "
+        
+        sleep 5 && /usr/bin/conky -c ~/.config/conky/config/.conkyrc &
+        exit 0
+
+        echo "$ok"
+
+}
+
+kde()   {
+        
+        echo -n "$start Conky... "
+        
+        sleep 5 && /usr/bin/conky -c ~/.config/conky/config/.conkyrc_gw &
+
+        echo "$ok"
+
+}
+
+moc()   {
+        
+        echo -n "$start Conky... "
+        
+        /usr/bin/conky -c ~/.config/conky/config/moc
+
+        echo "$ok"
+
+}
+
+top()   {
+        
+        echo -n "$start Conky... "
+        
+        /usr/bin/conky -c ~/.config/conky/config/.conkyrctop
+
+        echo "$ok"
+
+}
+
+start() {
+
+ 	echo -n "$start Conky... "
+
+	/usr/bin/conky -c ~/.config/conky/config/.conkyrc
+
+	echo "$ok" 
+
+}
+
+xstart() {
+
+ 	echo -n "$start Conky... "
+
+	sleep 5 && /usr/bin/conky -c ~/.config/conky/config/.conkyrc &
+
+	echo "$ok" 
+
+}	 	 
+
+weather() {
+
+ 	echo -n "$start Conky... "
+
+        /usr/bin/conky -c ~/.config/conky/config/weather
+
+	echo "$ok" 
+
+}	 
+
+phone() {
+
+ 	echo -n "$start Conky... "
+
+        /usr/bin/conky -c ~/.config/conky/config/phone
+
+	echo "$ok" 
+
+}	
+
+flash() {
+
+ 	echo -n "$start Conky... "
+
+        /usr/bin/conky -c ~/.config/conky/config/flash
+
+	echo "$ok" 
+
+}	
+
+stop() { 
+
+	echo -n "$stop conky... " 
+
+        	killall conky
+
+	echo "$ok" 
+
+} 
+
+restart() { 
+
+	stop 
+
+	start 
+
+}	 
+
+
+ 
+case "$1" in
+
+  -rhythmbox)
+        
+       rhythmbox
+  
+        ;;
+
+  -moc)
+
+        moc
+
+        ;;
+    
+  -top)
+ 
+       top
+
+        ;;
+
+  -openbox)
+
+        openbox
+        
+        ;;
+
+  -kde)
+ 
+        kde
+
+        ;;
+  
+  -start) 
+
+  	start 
+
+	;; 
+  
+  -xstart) 
+
+  	xstart 
+
+	;;
+
+  -weather) 
+
+  	weather 
+
+	;;
+ 
+  -phone)
+
+        phone
+
+        ;;
+
+  -flash)
+  
+        flash
+  
+        ;; 
+  
+  -stop) 
+
+  	stop 
+
+	;; 
+
+  -restart|-reload) 
+
+  	restart 
+
+	;; 
+
+  *) 
+
+	echo "$usage: $0 {-start|-openbox|-kde|-weather|-moc|-rhythmbox|-stop|-restart}" 
+
+	exit 1 
+
+esac 
+
+
+ 
+exit $?

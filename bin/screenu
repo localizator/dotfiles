@@ -1,0 +1,12 @@
+#!/bin/sh
+# Upload screenshots to imgur
+# Usage: screenu "image"
+
+for arg
+do
+    cp $arg thumb-screen.png
+    mogrify -resize 250x250 thumb-screen.png
+    imgur $HOME/thumb-screen.png | xclip -selection c
+    rm "$HOME/thumb-screen.png"
+    notify-send --icon=ok 'Завантаження успішно завершино!'
+done

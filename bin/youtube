@@ -1,0 +1,11 @@
+#!/bin/sh
+# Usage: youtube URL 
+format='45'
+quality='webm'
+output='%(stitle)s'
+
+for arg
+do
+    youtube-dl --format $format --max-quality $quality --output $output $arg
+done
+
