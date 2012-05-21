@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/ file:///usr/X11R6/share/openbox/menu.xsd">
+	<menu id="root-menu" label="openbox3">
+		<item label="Термінал" icon="/home/john/.icons/Faenza/apps/22/utilities-terminal.png">
+			<action name="Execute">
+				<execute>
+					lxterminal
+				</execute>
+			</action>
+		</item>
+		<item label="Менеджер файлів" icon="/home/john/.icons/Faenza/places/22/folder-documents.png">
+			<action name="Execute">
+				<execute>
+					pcmanfm
+				</execute>
+			</action>
+		</item>
+		<item label="Веб-оглядач" icon="/home/john/.icons/Faenza/apps/22/chromium-browser.png">
+			<action name="Execute">
+				<execute>
+					chromium %U --ignore-gpu-blacklist
+				</execute>
+			</action>
+		</item>
+		<item label="Текстовий редактор" icon="/home/john/.icons/Faenza/apps/22/leafpad.png">
+			<action name="Execute">
+				<execute>
+					leafpad
+				</execute>
+			</action>
+		</item>
+                <item label="Менеджер задач" icon="/home/john/.icons/Faenza/apps/22/gnome-system-monitor.png">
+			<action name="Execute">
+				<execute>
+					uxterm -title 'Менеджер задач' -e htop
+				</execute>
+			</action>
+		</item>
+                <item label="Керування террентами" icon="/home/john/.icons/Faenza/apps/22/ktorrent.png">
+			<action name="Execute">
+				<execute>
+					uxterm -title 'Керування Rtorrent' -e screen -r
+				</execute>
+			</action>
+		</item>
+		<item label="Виконати..." icon="/home/john/.icons/Faenza/status/22/system-devices-panel.png">
+			<action name="Execute">
+				<execute>
+					gmrun %U
+				</execute>
+			</action>
+		</item>
+                <separator/>
+		<menu id="root-menu-23433" label="Shutter" icon="/home/john/.icons/Faenza/apps/22/shutter.png">
+			<item label="Робочий стіл">
+				<action name="Execute">
+					<execute>
+						shutter -f -e -p 'localizator'
+					</execute>
+				</action>
+			</item>
+			<item label="Активне вікно">
+				<action name="Execute">
+					<execute>
+						shutter -a -e -p 'localizator'
+					</execute>
+				</action>
+			</item>
+                        <item label="Елемент програми">
+				<action name="Execute">
+					<execute>
+						shutter --section -e -p 'localizator'
+					</execute>
+				</action>
+			</item>
+                        <item label="Виділити...">
+				<action name="Execute">
+					<execute>
+						shutter -s -e -p 'localizator'
+					</execute>
+				</action>
+			</item>
+		</menu>
+                <menu id="root-menu-23437" label="Онлайн ТВ" icon="/home/john/.icons/Faenza/apps/22/tvtime.png">
+                        <item label="1+1">
+				<action name="Execute">
+					<execute>
+						vlc http://tv.x-lan.net.ua:8015/1plus1
+					</execute>
+				</action>
+			</item>
+                        <item label="Інтер">
+				<action name="Execute">
+					<execute>
+						vlc http://tv.x-lan.net.ua:8015/inter
+					</execute>
+				</action>
+			</item>
+                        <item label="ICTV">
+				<action name="Execute">
+					<execute>
+						vlc http://tv.x-lan.net.ua:8015/ictv
+					</execute>
+				</action>
+			</item>
+                        <item label="Новий канал">
+				<action name="Execute">
+					<execute>
+						vlc http://tv.x-lan.net.ua:8015/novy
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu execute="~/.config/openbox/pipemenus/obpipemenu-places ~/" id="places" label="Місця" icon="/home/john/.icons/Faenza/places/22/folder-documents.png"/>
+		<menu execute="~/.config/openbox/pipemenus/obrecent.sh ~/" id="recent" label="Останні файли" icon="/home/john/.icons/Faenza/places/22/folder-recent.png"/>
+		<separator label="Програми"/>
+		<menu id="Інструменти" label="Інструменти" icon="/home/john/.icons/Faenza/categories/22/applications-accessories.png">
+                        <item label="Oracle VM VirtualBox">
+				<action name="Execute">
+					<execute>
+						VirtualBox %U
+					</execute>
+				</action>
+			</item>
+			<item label="Leafpad">
+				<action name="Execute">
+					<execute>
+						leafpad %U
+					</execute>
+				</action>
+			</item>
+			<item label="Parcellite">
+				<action name="Execute">
+					<execute>
+						parcellite %U
+					</execute>
+				</action>
+			</item>
+			<item label="Xarchiver">
+				<action name="Execute">
+					<execute>
+						xarchiver
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="root-menu-442254" label="Програмування" icon="/home/john/.icons/Faenza/categories/22/applications-development.png">
+			<item label="Poedit">
+				<action name="Execute">
+					<execute>
+						poedit %U
+					</execute>
+				</action>
+			</item>
+		</menu>
+                <menu id="root-menu-442251" label="Офіс" icon="/home/john/.icons/Faenza/apps/22/libreoffice34-startcenter.png">
+			<item label="Libre Office">
+				<action name="Execute">
+					<execute>
+						libreoffice
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Графіка" label="Графіка" icon="/home/john/.icons/Faenza/categories/22/applications-graphics.png">
+			<item label="GPicview">
+				<action name="Execute">
+					<execute>
+						gpicview
+					</execute>
+				</action>
+			</item>
+			<item label="GIMP">
+				<action name="Execute">
+					<execute>
+						gimp-2.8
+					</execute>
+				</action>
+			</item>
+			<item label="Shutter">
+				<action name="Execute">
+					<execute>
+						shutter --min_at_startup
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Аудіо та відео" label="Медіа" icon="/home/john/.icons/Faenza/categories/22/applications-multimedia.png">
+			<item label="DeaDBeeF">
+				<action name="Execute">
+					<execute>
+						deadbeef
+					</execute>
+				</action>
+			</item>
+                        <item label="Ario">
+				<action name="Execute">
+					<execute>
+						ario %U
+					</execute>
+				</action>
+			</item>
+			<item label="SMPlayer">
+				<action name="Execute">
+					<execute>
+						smplayer
+					</execute>
+				</action>
+			</item>
+                        <item label="UMPlayer">
+				<action name="Execute">
+					<execute>
+						umplayer
+					</execute>
+				</action>
+			</item>
+			<item label="VLC">
+				<action name="Execute">
+					<execute>
+						vlc
+					</execute>
+				</action>
+			</item>
+			<item label="Sonata">
+				<action name="Execute">
+					<execute>
+						sonata
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Мережа" label="Мережа" icon="/home/john/.icons/Faenza/categories/22/applications-internet.png">
+			<item label="Chromium">
+				<action name="Execute">
+					<execute>
+						chromium %U --ignore-gpu-blacklist
+					</execute>
+				</action>
+			</item>
+                        <item label="Opera">
+				<action name="Execute">
+					<execute>
+						opera
+					</execute>
+				</action>
+			</item>
+			<item label="Pidgin">
+				<action name="Execute">
+					<execute>
+						pidgin %U
+					</execute>
+				</action>
+			</item>
+			<item label="Dropbox">
+				<action name="Execute">
+					<execute>
+						dropboxd %U
+					</execute>
+				</action>
+			</item>
+			<item label="qBittorrent">
+				<action name="Execute">
+					<execute>
+						qbittorrent %U
+					</execute>
+				</action>
+			</item>
+			<item label="Firefox">
+				<action name="Execute">
+					<execute>
+						firefox
+					</execute>
+				</action>
+			</item>
+			<item label="Thunderbird">
+				<action name="Execute">
+					<execute>
+						thunderbird
+					</execute>
+				</action>
+			</item>
+			<item label="Filezilla">
+				<action name="Execute">
+					<execute>
+						filezilla
+					</execute>
+				</action>
+			</item>
+			<item label="Skype">
+				<action name="Execute">
+					<execute>
+						skype %U
+					</execute>
+				</action>
+			</item>
+			<item label="Wicd">
+				<action name="Execute">
+					<execute>
+						/usr/bin/wicd-client 
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Система" label="Система" icon="/home/john/.icons/Faenza/categories/22/applications-system.png">
+			<item label="Менеджер задач">
+				<action name="Execute">
+					<execute>
+						lxtask %U
+					</execute>
+				</action>
+			</item>
+			<item label="Gparted">
+				<action name="Execute">
+					<execute>
+						xterm -title 'Введіть пароль:' -e sudo -p 'Password:' gparted
+					</execute>
+				</action>
+			</item>
+			<item label="Htop">
+				<action name="Execute">
+					<execute>
+						xterm -title 'Менеджер задач' -e htop
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="root-menu-215943" label="Адміністрування" icon="/home/john/.icons/Faenza/categories/22/applications-system.png">
+			<item label="Налаштування системи">
+				<action name="Execute">
+					<execute>
+						xterm -title 'Введіть пароль:' -e sudo -p 'Password:' nano /etc/rc.conf
+					</execute>
+				</action>
+			</item>
+			<item label="Catalyst Control Center">
+				<action name="Execute">
+					<execute>
+						xterm -title 'Введіть пароль:' -e sudo -p 'Password:' amdcccle
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="Налаштування" label="Налаштування" icon="/home/john/.icons/Faenza/categories/22/applications-other.png">
+			<item label="Налаштувати Openbox">
+				<action name="Execute">
+					<execute>
+						obconf
+					</execute>
+				</action>
+			</item>
+			<item label="Редагувати autostart">
+				<action name="Execute">
+					<execute>
+						xterm -e nano /home/john/.config/openbox/autostart
+					</execute>
+				</action>
+			</item>
+			<item label="Редагувати rc.xml">
+				<action name="Execute">
+					<execute>
+						xterm -e nano /home/john/.config/openbox/rc.xml
+					</execute>
+				</action>
+			</item>
+			<item label="Улюблені програми">
+				<action name="Execute">
+					<execute>
+						libfm-pref-apps
+					</execute>
+				</action>
+			</item>
+			<item label="Інтерфейс">
+				<action name="Execute">
+					<execute>
+						lxappearance
+					</execute>
+				</action>
+			</item>
+			<item label="Шпалери">
+				<action name="Execute">
+					<execute>
+						nitrogen
+					</execute>
+				</action>
+			</item>
+			<item label="Меню">
+				<action name="Execute">
+					<execute>
+						obmenu
+					</execute>
+				</action>
+			</item>
+			<item label="Гарячі клавіші">
+				<action name="Execute">
+					<execute>
+						obkey
+					</execute>
+				</action>
+			</item>
+			<item label="Панель tint2">
+				<action name="Execute">
+					<execute>
+						tint2conf
+					</execute>
+				</action>
+			</item>
+			<menu id="root-menu-891528" label="Ефекти">
+				<item label="Без ефектів">
+					<action name="Execute">
+						<execute>
+							~/.config/openbox/scripts/xcompmgr.sh unset
+						</execute>
+					</action>
+				</item>
+				<item label="Прозорість">
+					<action name="Execute">
+						<execute>
+							~/.config/openbox/scripts/xcompmgr.sh set
+						</execute>
+					</action>
+				</item>
+				<item label="Прозорість, fading">
+					<action name="Execute">
+						<execute>
+							~/.config/openbox/scripts/xcompmgr.sh setshaded
+						</execute>
+					</action>
+				</item>
+				<item label="Прозорість, fading shadows">
+					<action name="Execute">
+						<execute>
+							~/.config/openbox/scripts/xcompmgr.sh setshadowshade
+						</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="Перезапуск Openbox">
+				<action name="Reconfigure"/>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="exit-menu" label="Вихід" icon="/home/john/.icons/Faenza/actions/22/system-log-out.png">
+			<item label="Завершити сеанс">
+				<action name="Execute">
+					<command>
+						openbox --exit
+					</command>
+				</action>
+			</item>
+			<item label="Вимкнути">
+				<action name="Execute">
+					<command>
+						dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop
+					</command>
+				</action>
+			</item>
+			<item label="Перезапуск">
+				<action name="Execute">
+					<command>
+						dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart
+					</command>
+				</action>
+			</item>
+			<item label="Призупинити">
+				<action name="Execute">
+					<command>
+						dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend
+					</command>
+				</action>
+			</item>
+			<item label="Режим сну">
+				<action name="Execute">
+					<command>
+						dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate
+					</command>
+				</action>
+			</item>
+		</menu>
+	</menu>
+</openbox_menu>

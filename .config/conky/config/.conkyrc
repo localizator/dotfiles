@@ -1,0 +1,147 @@
+######################
+# - Conky settings - #
+######################
+update_interval 1
+total_run_times 0
+net_avg_samples 1
+cpu_avg_samples 1
+
+imlib_cache_size 0
+double_buffer yes
+no_buffers yes
+
+format_human_readable
+
+#####################
+# - Text settings - #
+#####################
+use_xft yes
+xftfont Droid Sans:style=Bold:size=8
+override_utf8_locale yes
+text_buffer_size 2048
+
+#############################
+# - Window specifications - #
+#############################
+own_window_class Conky
+own_window yes
+own_window_type normal
+own_window_argb_visual yes
+own_window_argb_value 180
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+alignment top_right
+gap_x 10
+gap_y 40
+minimum_size 182 0
+maximum_width 212 50
+#maximum_height 982 0
+default_bar_size 60 8
+
+#########################
+# - Graphics settings - #
+#########################
+draw_shades no
+
+#default_color E2DACB
+default_color FFFFFF
+
+#color0 F0EBE2
+color0 F0EBE2
+color1 F0EBE2
+color2 E6E6E6
+
+TEXT
+${font Droid Sans:style=Bold:size=8}СИСТЕМА $stippled_hr${font}
+###############
+# - СИСТЕМА - #
+###############
+${color0}${voffset 6}${font OpenLogos:size=19}B${font}${color}${goto 32}${voffset -14}Ядро:  ${alignr}${color2}${kernel}${color}
+${goto 32}Час роботи: ${alignr}${color2}${uptime}${color}
+${goto 32}Gmail: ${alignr}${color2}${execpi 300 ~/bin/gmail} нове${color}
+# |--ОНОВЛЕННЯ
+${goto 32}Оновлення: ${alignr}${font Droid Sans:style=Bold:size=8}${color1}${execi 600 pacman -Qu | wc -l}${color}${font} ${color2}пакунків${color}
+# |--ПРОЦЕСОР
+${offset 1}${color0}${font Poky:size=16}P${font}${offset -19}${voffset 9}${cpubar cpu0 4,18}
+${goto 32}${color}${voffset -30}AMD Phenom 9650${font Droid Sans:style=Bold:size=8}${alignr}${color1}${freq_g cpu0}${color} ГГц${font}
+${goto 32}ЦП1: ${font Droid Sans:style=Bold:size=8}${color1}${cpu cpu1}%${font} ${alignr}${font Droid Sans:style=Bold:size=8}${execi 300 sensors -A f71882fg-isa-0a00 | grep 'temp2' | cut -c15-17 ;}${color}°C${color}${font}  ${color2}${cpugraph cpu1 8,50 CE5C00 E07A1F}${color}
+${goto 32}ЦП2: ${font Droid Sans:style=Bold:size=8}${color1}${cpu cpu2}%${font} ${alignr}${font Droid Sans:style=Bold:size=8}${execi 300 sensors -A f71882fg-isa-0a00 | grep 'temp2' | cut -c15-17 ;}${color}°C${color}${font}  ${color2}${cpugraph cpu2 8,50 CE5C00 E07A1F}${color}
+${goto 32}ЦП3: ${font Droid Sans:style=Bold:size=8}${color1}${cpu cpu3}%${font} ${alignr}${font Droid Sans:style=Bold:size=8}${execi 300 sensors -A f71882fg-isa-0a00 | grep 'temp2' | cut -c15-17 ;}${color}°C${color}${font}  ${color2}${cpugraph cpu3 8,50 CE5C00 E07A1F}${color}
+${goto 32}ЦП4: ${font Droid Sans:style=Bold:size=8}${color1}${cpu cpu4}%${font} ${alignr}${font Droid Sans:style=Bold:size=8}${execi 300 sensors -A f71882fg-isa-0a00 | grep 'temp2' | cut -c15-17 ;}${color}°C${color}${font}  ${color2}${cpugraph cpu4 8,50 CE5C00 E07A1F}${color}
+# |--ГРАФІКА (sudo aticonfig --initial -f)
+#${color0}${font Poky:size=16}S${font}${color}${goto 32}${color}ATI Radeon HD 4650
+#${goto 32}ГП: ${font Droid Sans:style=Bold:size=8}${color1}${execi 1 aticonfig --adapter=0 --od-getclocks | grep -i GPU | cut -c31-34}${color}${alignr}${color1}${execi 30 aticonfig --adapter=0 --od-gettemperature | grep -i Temp | cut -c37-42}${color}°C${font}${color}
+#${goto 32}Ядро:${font Droid Sans:style=Bold:size=8}${color1}${execi 1 aticonfig --adapter=0 --od-getclocks | grep -i Clocks | cut -c31-34}${color} МГц${font}${alignr}ОЗП:${font Droid Sans:style=Bold:size=8}${color1}${execi 1 aticonfig --adapter=0 --od-getclocks | grep -i Clocks | cut -c45-49}${color} МГц${font}
+# |--ОЗП
+${color0}${font Poky:size=16}M${font}${color}${goto 32}${voffset -7}ОЗП: ${font Droid Sans:style=Bold:size=8}${color1}$memperc%${color}${font}
+${offset 1}${voffset 2}${color0}${membar 4,18}${color}${goto 32}${voffset -2}В: ${font Droid Sans:style=Bold:size=8}${color2}${memeasyfree}${color}${font} З: ${font Droid Sans:style=Bold:size=8}${color2}${mem}${color}${font}
+${voffset 2}${color0}${font Poky:size=14}s${font}${color}${voffset -8}${goto 32}СВОП: ${font Droid Sans:style=Bold:size=8}${color1}${swapperc}%${color}${font}
+${voffset 4}${offset 1}${color0}${swapbar 4,18}${color}${voffset -4}${goto 32}В: ${font Droid Sans:style=Bold:size=8}${color2}$swapmax${color}${font} З: ${font Droid Sans:style=Bold:size=8}${color2}$swap${color}${font}
+
+# |--ПРОЦЕСИ
+${voffset 2}${color0}${font Poky:size=15}a${font}${color}${goto 32}${voffset -10}Процеси: ${color2}${alignr 13}ЦП${alignr}ОЗП${color}
+${voffset -1}${goto 42}${color2}${top name 1}${color}${font Droid Sans:style=Bold:size=8}${color1} ${goto 124}${top cpu 1}${alignr }${top mem 1}${color}${font}
+${voffset -1}${goto 42}${color2}${top name 2}${color}${font Droid Sans:style=Bold:size=8}${color1} ${goto 124}${top cpu 2}${alignr }${top mem 2}${color}${font}
+${voffset -1}${goto 42}${color2}${top name 3}${color}${font Droid Sans:style=Bold:size=8}${color1} ${goto 124}${top cpu 3}${alignr }${top mem 3}${color}${font}
+${voffset -1}${goto 42}${color2}${top name 4}${color}${font Droid Sans:style=Bold:size=8}${color1} ${goto 124}${top cpu 4}${alignr }${top mem 4}${color}${font}
+${voffset -1}${goto 42}${color2}${top name 5}${color}${font Droid Sans:style=Bold:size=8}${color1} ${goto 124}${top cpu 5}${alignr }${top mem 5}${color}${font}
+######################
+# - ДАТА ТА ГОДИНА - #
+######################
+${voffset 4}${font Droid Sans:style=Bold:size=8}ЧАС $stippled_hr${font}
+${voffset -12}${goto 28}${font Arial Black:size=38}${color2}${time %H}${color}${font}${voffset -28}${font Droid Sans:style=Bold:size=11}${color2}${time :%M}${time :%S}${color}${font}
+${voffset -2}${goto 100}${font Droid Sans:style=Bold:size=8}${color2}${time %A}${color}${font}
+${goto 100}${time %d %b %Y}
+#####################
+# - ЖОРСТКИЙ ДИСК - #
+#####################
+${voffset 4}${font Droid Sans:style=Bold:size=8}HD $stippled_hr${font}
+# |--HDTEMP1
+${voffset 4}${font Pie charts for maps:size=14}7${font} ${goto 32}${voffset -4}/dev/sda${alignc}${goto 104}${font Droid Sans:style=Bold:size=8}${color1}${execi 120 hddtemp /dev/sda -n --unit=C}°C${color}${font} ${alignr}${color2}${diskiograph 8,60 CD646B F56F6E /}${color}
+${voffset 4}${goto 5}${voffset -4}/ ${alignc}${goto 65}${fs_type /}${alignr}${fs_used /}/${fs_size /}
+###############
+# - МЕРЕЖА -  #
+###############
+${voffset 4}${font Droid Sans:style=Bold:size=8}МЕРЕЖА $stippled_hr${font}
+# |--ETH0
+${if_up eth0}
+${voffset -13}${color0}${font VariShapes Solid:size=14}q${font}${color}${goto 32}${voffset -6}Передача: ${font Droid Sans:style=Bold:size=8}${color1}${upspeed eth0}${color}${font} ${alignr}${color2}${upspeedgraph eth0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totalup eth0}${color}${font}
+${voffset -2}${color0}${font VariShapes Solid:size=14}Q${font}${color}${goto 32}${voffset -6}Прийом: ${font Droid Sans:style=Bold:size=8}${color1}${downspeed eth0}${color}${font} ${alignr}${color2}${downspeedgraph eth0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totaldown eth0}${color}${font}
+${voffset -2}${color0}${font Poky:size=13}w${font}${color}${goto 32}${voffset -4}Локальна IP: ${alignr}${color2}${addr eth0}${color}
+${goto 32}Публічна IP: ${alignr}${color2}${execi 10800 ~/.config/conky/scripts/conf.sh -ip}${color}
+# |--WLAN0
+${else}${if_up wlan0}
+${voffset -13}${color0}${font VariShapes Solid:size=14}q${font}${color}${goto 32}${voffset -6}Передача: ${font Droid Sans:style=Bold:size=8}${color1}${upspeed wlan0}${color}${font} ${alignr}${color2}${upspeedgraph wlan0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totalup wlan0}${color}${font}
+${voffset -2}${color0}${font VariShapes Solid:size=14}Q${font}${color}${goto 32}${voffset -6}Прийом: ${font Droid Sans:style=Bold:size=8}${color1}${downspeed wlan0}${color}${font} ${alignr}${color2}${downspeedgraph wlan0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totaldown wlan0}${color}${font}
+${voffset -2}${color0}${font Poky:size=14}Y${font}${color}${goto 32} ${voffset -2}Сигнал: ${font Droid Sans:style=Bold:size=8}${color1}${wireless_link_qual wlan0}%${color}${font} ${alignr}${color2}${wireless_link_bar 8,60 wlan0}${color}
+${voffset 4}${color0}${font Poky:size=13}w${font}${color}${goto 32}${voffset -8}Локальна IP: ${alignr}${color2}${addr wlan0}${color}
+${goto 32}Публічна IP: ${alignr}${color2}${execi 10800 ~/.config/conky/scripts/conf.sh -ip}${color}
+# |--PPP0
+${else}${if_up ppp0}
+${voffset -13}${color0}${font VariShapes Solid:size=14}q${font}${color}${goto 32}${voffset -6}Передача: ${font Droid Sans:style=Bold:size=8}${color1}${upspeed ppp0}${color}${font} ${alignr}${color2}${upspeedgraph ppp0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totalup ppp0}${color}${font}
+${voffset -2}${color0}${font VariShapes Solid:size=14}Q${font}${color}${goto 32}${voffset -6}Прийом: ${font Droid Sans:style=Bold:size=8}${color1}${downspeed ppp0}${color}${font} ${alignr}${color2}${downspeedgraph ppp0 8,60 CD646B F56F6E}${color}
+${goto 32}Всього: ${font Droid Sans:style=Bold:size=8}${color2}${totaldown ppp0}${color}${font}
+${voffset -2}${color0}${font Poky:size=13}w${font}${color}${goto 32}${voffset -4}Локальна IP: ${alignr}${color2}${addr ppp0}${color}
+${else}${voffset 4}${color0}${font PizzaDude Bullets:size=12}4${font}${color}${goto 32}Мережа недоступна${voffset 14}${endif}${endif}${endif}
+${voffset 4}${font Droid Sans:style=Bold:size=8}ОНОВЛЕННЯ $stippled_hr${font}
+-  ${alignr}${rss http://www.archlinux.org/feeds/packages/ 10 item_title 0}
+-  ${alignr}${rss http://www.archlinux.org/feeds/packages/ 10 item_title 1}
+-  ${alignr}${rss http://www.archlinux.org/feeds/packages/ 10 item_title 2}
+-  ${alignr}${rss http://www.archlinux.org/feeds/packages/ 10 item_title 3}
+-  ${alignr}${rss http://www.archlinux.org/feeds/packages/ 10 item_title 4}
+-  ${alignr}${rss http://www.archlinux.org/feeds/news/ 10 item_title 0}
+${if_running mpd}
+${voffset -5}${font Droid Sans:style=Bold:size=8}МУЗИКА $stippled_hr${font}
+${voffset 3}Назва: ${alignr}$mpd_title
+Виконавець: ${alignr}$mpd_artist
+Альбом: ${alignr}$mpd_album
+Тривалість: ${alignr}$mpd_elapsed/$mpd_length
+$endif
+${voffset -5}${font Droid Sans:style=Bold:size=8}Охуенный блять совет $stippled_hr${font}
+
+${voffset -5}${execi 100 ~/.config/conky/scripts/conf.sh -fuck}

@@ -1,0 +1,46 @@
+# --- Window Layout & Options --- #
+use_xft yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+alignment top_right
+use_spacer none #none
+gap_x 415
+gap_y 40
+total_run_times 0
+no_buffers yes
+cpu_avg_samples 4
+net_avg_samples 1
+background yes
+
+# --- Colours, Sizes, Fonts & Margins --- #
+xftfont DejaVu Sans:size=8
+xftalpha 1
+update_interval 1.0
+minimum_size 150 0
+#maximum_width 0
+stippled_borders 0
+border_width 1
+default_color white
+#default_color 303030
+#default_shade_color black
+default_outline_color white
+own_window_colour white
+
+
+# --- Text --- #
+draw_outline no
+draw_borders no #no
+uppercase no
+draw_shades no
+override_utf8_locale yes
+text_buffer_size 2048
+
+
+TEXT
+${voffset 3}ПОГОДА:${alignr 35}${execi 600 conkyForecast --location=UPXX0036 --datatype=HT}  ${voffset -4}${font ConkyWeather:style=Bold:size=20}${execi 600 conkyForecast --location=UPXX0036 --datatype=WF}${font}
+${voffset 0}${alignc 55}${execpi 600 conkyForecast --location=UPXX0036 --datatype=DW --startday=1 --shortweekday} ${alignc 10}${execpi 600 conkyForecast --location=UPXX0036 --datatype=DW --startday=2 --shortweekday} ${alignc -38}${execpi 600 conkyForecast --location=UPXX0036 --datatype=DW --startday=3 --shortweekday} ${alignc -80}${execpi 600 conkyForecast --location=UPXX0036 --datatype=DW --startday=4 --shortweekday}
+${voffset 0}${alignc 75}${font ConkyWeather:size=28}${execpi 600 conkyForecast --location=UPXX0036 --datatype=WF --startday=1 --endday=4 --spaces=2}${font}
+${voffset 0}${alignc 40}${execi 600 conkyForecast --location=UPXX0036 --datatype=HT --startday=1 --hideunits --centeredwidth=3}/${execpi 600 conkyForecast --location=UPXX0036 --datatype=LT --startday=1 --hideunits --centeredwidth=3} ${alignc -23}${execpi 600 conkyForecast --location=UPXX0036 --datatype=HT --startday=2 --hideunits --centeredwidth=3}/${execpi 600 conkyForecast --location=UPXX0036 --datatype=LT --startday=2 --hideunits --centeredwidth=3} ${alignc -55}${execpi 600 conkyForecast --location=UPXX0036 --datatype=HT --startday=3 --hideunits --centeredwidth=3}/${execpi 600 conkyForecast --location=UPXX0036 --datatype=LT --startday=3 --hideunits --centeredwidth=3} ${alignr 2}${execpi 600 conkyForecast --location=UPXX0036 --datatype=HT --startday=4 --hideunits --centeredwidth=3}/${execpi 600 conkyForecast --location=UPXX0036 --datatype=LT --startday=4 --hideunits --centeredwidth=3}${font}

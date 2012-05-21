@@ -1,0 +1,50 @@
+# --- Window Layout & Options --- #
+use_xft yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+alignment top_right
+use_spacer none #none
+gap_x 745
+gap_y 150
+total_run_times 0
+no_buffers yes
+cpu_avg_samples 4
+net_avg_samples 1
+background yes
+
+# --- Colours, Sizes, Fonts & Margins --- #
+xftfont DejaVu Sans:size=8
+xftalpha 1
+update_interval 1.0
+minimum_size 300
+maximum_width 480
+stippled_borders 0
+border_width 1
+default_color white
+#default_color 303030
+#default_shade_color black
+default_outline_color white
+own_window_colour white
+
+
+# --- Text --- #
+draw_outline no
+draw_borders no #no
+uppercase no
+draw_shades no
+override_utf8_locale yes
+text_buffer_size 2048
+
+
+TEXT
+${goto 20}${if_running rhythmbox}${font Poky:size=16}l${font} RHYTMBOX: ${exec rhythmbox-client --no-start --print-playing}
+${goto 20}Виконавець${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %ta}
+${goto 20}Назва${goto 120}- ${exec rhythmbox-client --print-playing-format %tt}
+${goto 20}Альбом${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %at}
+${goto 20}Жанр${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %ag}
+${goto 20}Рік${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %ay}
+${goto 20}Позиція${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %te}
+${goto 20}Тривалість${goto 120}- ${exec rhythmbox-client --no-start --print-playing-format %td}$else${goto 100}${font sans:size=6:bold}${font}$endif

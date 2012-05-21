@@ -1,0 +1,44 @@
+#
+## ~/.mplayer/config
+## author  : localizator <localizator@ukr.net>
+## website : https://github.com/localizator
+#
+
+#General setup
+
+ao="alsa"
+mixer-channel="Master"
+srate="48000"
+
+######################
+# Only catalyst users
+#vo="vaapi:gl"
+#va="vaapi"
+#####################
+lavdopts="fast=1:skiploopfilter=all:threads=4"
+zoom="1"
+aid="1"
+#sid="0"
+
+#Display
+monitoraspect="4:3"
+
+subcp="UTF-8"
+font="/usr/share/fonts/truetype/msttcorefonts/impact.ttf"
+ffactor="10"
+sub-bg-alpha="0"
+sub-bg-color="0"
+subfont-text-scale="3.7"
+subfont-blur="1"
+subpos="90"
+subalign="2"
+slang="uk"
+
+ontop="1"
+
+autoq="100"
+vf="pp=de,hqdn3d"
+stop-xscreensaver="no"
+
+[extension.mkv]
+fs="yes"

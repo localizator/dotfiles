@@ -1,0 +1,53 @@
+# --- Window Layout & Options --- #
+use_xft yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+alignment bottom_left
+use_spacer none #none
+gap_x 620
+gap_y 35
+total_run_times 0
+no_buffers yes
+cpu_avg_samples 4
+net_avg_samples 1
+background yes
+
+# --- Colours, Sizes, Fonts & Margins --- #
+xftfont DejaVu Sans:size=8
+xftalpha 1
+update_interval 1.0
+minimum_size 250 60
+#maximum_width 0
+stippled_borders 0
+border_width 1
+default_color white
+#default_color 303030
+#default_shade_color black
+default_outline_color white
+own_window_colour white
+
+
+# --- Text --- #
+draw_outline no
+draw_borders no #no
+uppercase no
+draw_shades no
+override_utf8_locale yes
+text_buffer_size 2048
+
+
+TEXT
+${goto 20}${if_mounted /media/JETFLASH}${voffset -8}${image ~/.config/conky/icons/usb.png -p -5,-0 -s 48x48}
+${goto 45}Про носій: ${alignr}JetFlash Transcend 8GB
+${goto 45}Дисковий простір: ${alignr}${fs_used /media/JETFLASH}/${fs_free /media/JETFLASH}
+${goto 45}${stippled_hr}
+${goto 45}Том: ${alignr}JETFLASH
+${goto 45}Файлова система: ${alignr}${fs_type /media/JETFLASH}
+${goto 45}Використовується: ${voffset 1}${fs_bar 6,60 /media/JETFLASH} ${alignr}${fs_used_perc /media/JETFLASH}% | ${fs_used /media/JETFLASH}
+${goto 45}Вільний простір: ${alignr}${fs_free_perc /media/JETFLASH}% | ${fs_free /media/JETFLASH}
+${goto 45}Загальна ємкість: ${alignr}${fs_size /media/JETFLASH}
+${else}
+${goto 45}${font Ubuntu-Title:size=20}${goto 135}JetFlash${font}${image ~/.config/conky/icons/usb.png -p -5,-0 -s 48x48}${font}${endif}

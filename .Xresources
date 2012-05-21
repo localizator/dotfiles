@@ -1,0 +1,64 @@
+!!!Cursor!!!
+
+Xcursor.theme: Vainilla-DMZ-AA Xcursor.size: 22
+
+# Modified Solarized dark color scheme
+# ------------------------------------
+# define S_base03       #1C1C1C
+# define S_base02       #262626
+# define S_base01       #586E75
+# define S_base00       #657B83
+# define S_base0        #839496
+# define S_base1        #93A1A1
+# define S_base2        #EEE8D5
+# define S_base3        #FDF6E3
+# define S_yellow       #B58900
+# define S_orange       #CB4B16
+# define S_red          #DC322F
+# define S_magenta      #D33682
+# define S_violet       #6C71C4
+# define S_blue         #268BD2
+# define S_cyan         #2AA198
+# define S_green        #859900
+
+*background:            S_base03
+*foreground:            S_base00
+!*fading:               40				 # Do not fade my windows
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+*color0:                S_base02
+*color8:                S_base03
+*color1:                S_red
+*color9:                S_orange
+*color2:                S_green
+*color10:               S_base01
+*color3:                S_yellow
+*color11:               S_base00
+*color4:                S_blue
+*color12:               S_base0
+*color5:                S_magenta
+*color13:               S_violet
+*color6:                S_cyan
+*color14:               S_base1
+*color7:                S_base2
+*color15:               S_base3
+
+!!!Config Urxvt!!!
+
+!URxvt.depth: 32
+!URxvt.background: rgba:1500/1500/1500/ffff
+
+*background:   #151515
+*foreground:   white
+URxvt.font: xft: Terminus:pixelsize=8:antialias=false
+URxvt.geometry: 80x20
+URxvt.scrollBar: true
+Urxvt.secondaryScroll: true
+URxvt.scrollBar_right: true
+URxvt.scrollBar_floating: true
+URxvt.scrollstyle: plain
+URxvt.scrollColor: #252525
+URxvt.cursorColor: #404040

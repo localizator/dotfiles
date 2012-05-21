@@ -1,0 +1,52 @@
+# --- Window Layout & Options --- #
+use_xft yes
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+alignment top_right
+use_spacer none #none
+gap_x 460
+gap_y 488
+total_run_times 0
+no_buffers yes
+cpu_avg_samples 4
+net_avg_samples 1
+background yes
+
+# --- Colours, Sizes, Fonts & Margins --- #
+xftfont DejaVu Sans:size=8
+xftalpha 1
+update_interval 1.0
+minimum_size 550 60
+#maximum_width 0
+stippled_borders 1
+border_width 1
+default_color white
+#default_color 303030
+#default_shade_color black
+default_outline_color white
+own_window_colour white
+
+
+# --- Text --- #
+draw_outline no
+draw_borders no
+uppercase no
+draw_shades no
+override_utf8_locale yes
+text_buffer_size 2048
+
+
+TEXT
+${goto 20}${if_running mocp}${voffset -8}${image /home/john/.config/conky/icons/moc.png -p -5,-0 -s 48x48} 
+${goto 45}MOC: ${exec mocp --format %song}
+${goto 45}${exec mocp --format %album}
+${goto 45}${stippled_hr}
+${goto 45}Виконавець${goto 120}- ${exec mocp --format %artist}
+${goto 45}Назва${goto 120}- ${exec mocp --format %title}
+${goto 45}Альбом${goto 120}- ${exec mocp --format %album}
+${goto 45}Позиція${goto 120}- ${exec mocp --format %ct}
+${goto 45}Тривалість${goto 120}- ${exec mocp --format %tt}
+${goto 45}Бітрейт${goto 120}- ${exec mocp --format %b}$else${font sans:size=6:bold}${font}$endif

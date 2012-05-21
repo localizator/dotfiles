@@ -1,0 +1,8 @@
+bt-seed-unverified
+max-overall-upload-limit=1M
+max-upload-limit=600K
+listen-port=6881
+enable-dht=true
+dht-listen-port=6881-6999
+seed-ratio=5.0
+seed-time=240
