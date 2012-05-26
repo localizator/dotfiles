@@ -1,0 +1,11 @@
+# Debian specific alias'
+
+# Apt-Get
+alias aptu="sudo apt-get update && sudo apt-get upgrade"
+alias apts="sudo apt-get install"
+alias aptr="sudo apt-get remove"
+
+# Startup scripts
+function rc.d {
+    sudo /etc/init.d/$1 $2
+}

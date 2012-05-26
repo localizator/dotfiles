@@ -1,0 +1,102 @@
+BASH_CONF_DIR="$HOME/.bash"
+#Editors
+alias n="$EDITOR"
+if (which X >/dev/null); then
+    alias sn="sudo nano"
+else
+    alias sn="sudo $EDITOR"
+fi
+
+if (which pacman >/dev/null); then
+    source $BASH_CONF_DIR/arch-aliases
+else if (which apt-get >/dev/null); then
+    source $BASH_CONF_DIR/debian-aliases
+fi
+fi
+
+# Main
+alias down='aria2c --conf-path=${HOME}/.aria2/aria2.conf'
+alias torrent='aria2c --conf-path=${HOME}/.aria2/aria2.bittorrent'
+alias svim='sudo vim'
+alias vi='vim'
+alias smc='sudo mc'
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias cmatrix='cmatrix -bx -u8'
+alias cl='clear'
+alias :q='clear; exit'
+alias exit="clear; exit"
+alias mc="mc -x"
+alias rip='cdparanoia -B -w -d /dev/sr0'
+alias ydl='youtube-dl'
+alias yvi='youtube-viewer'
+alias rc.d='sudo rc.d'
+alias ll='ls -l'
+alias webcam='mplayer tv:// -tv driver=v4l2:width=640:height=480:device=/dev/video0 -fps 15 -vf screenshot'
+alias alsi='alsi -a'
+alias nas='ssh root@192.168.1.147'
+alias router='ssh root@192.168.0.1'
+
+# File shortcuts
+alias mpd.conf="sudo $EDITOR /etc/mpd.conf"
+alias smb.conf="sudo $EDITOR /etc/samba/smb.conf"
+alias openboxrc="$EDITOR ~/.config/openbox/rc.xml"
+alias menu.xml="$EDITOR ~/.config/openbox/menu.xml"
+alias xorg.conf="sudo $EDITOR /etc/X11/xorg.conf"
+alias fstab="sudo $EDITOR /etc/fstab"
+alias menu.lst="sudo $EDITOR /boot/grub/menu.lst"
+alias brc="$EDITOR ~/.bashrc; source ~/.bashrc"
+alias zrc="$EDITOR ~/.zshrc; source ~/.zshrc"
+alias prc="$EDITOR ~/.pythonrc"
+alias arc="$EDITOR ~/.alias; source ~/.alias"
+alias frc="$EDITOR ~/.functions; source ~/.functions"
+alias zarc="$EDITOR ~/.zalias; source ~/.zalias"
+alias src="$EDITOR ~/.screenrc"
+alias envrc="$EDITOR ~/.envrc; source ~/.envrc"
+alias xrc="$EDITOR ~/.xinitrc"
+alias mpd.conf="sudo $EDITOR /etc/mpd.conf"
+
+if (which mpd >/dev/null); then
+    # Audio
+    alias play="mpc play"
+    alias pause="mpc toggle"
+    alias stop="mpc stop"
+    alias next="mpc next"
+    alias prev="mpc prev"
+    alias toggle="mpc toggle"
+    alias plr="ncmpcpp"
+fi
+
+# Mount
+alias mount="sudo mount"
+alias umount="sudo umount"
+alias fsck="sudo fsck"
+
+# Shutdown
+alias shutdown="sudo shutdown"
+alias shuty="sudo shutdown -h now"
+alias reboot="sudo reboot"
+
+# Ping
+alias pingy="ping -c 5"
+alias gping="ping -c 5 www.google.com.ua"
+
+# git
+alias git='hub'
+alias gitco='hub commit -m'
+alias gitst='hub status'
+alias gitpu='hub push -u origin master'
+alias gitdi='hub diff'
+alias gitig='vim .gitignore'
+alias gitad='hub add'
+alias gitcl='hub clone'
+alias gitlo='hub log'
+alias gitpl='hub pull'
+alias gitin='hub init'
+alias gitrm='hub rm'

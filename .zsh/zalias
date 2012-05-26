@@ -1,0 +1,10 @@
+#ZSH excusive alias'
+alias -s txt="$EDITOR"
+alias -s log="$EDITOR"
+
+#Global
+alias -g G="| grep"
+alias -g T="| tail -1"
+alias -g H="| head -1"
+alias -g NUL=">/dev/null"
+alias -g TNUL=">/dev/null 2>&1"

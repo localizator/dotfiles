@@ -1,0 +1,36 @@
+# Arch linux specific alias'
+
+# File shortcuts
+alias mirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
+alias rc.conf="sudo $EDITOR /etc/rc.conf"
+alias powerpill.conf="sudo $EDITOR /etc/powerpill.conf"
+alias mkinitcpio.conf="sudo $EDITOR /etc/mkinitcpio.conf"
+alias rc.local="sudo $EDITOR /etc/rc.local"
+alias modprobe.conf="sudo $EDITOR /etc/modprobe.d/modprobe.conf"
+alias archeye="$EDITOR $XDG_CONFIG_HOME/archey3.cfg"
+
+#Pacman
+alias pacman='sudo pacman-color'
+alias pc='sudo pacman-color'
+alias pcc='sudo pacman-color -Rs $(pacman-color -Qqtd)'
+alias pi="sudo pacman-color -S"
+alias ps="sudo pacman-color -Ss"
+alias pu="sudo pacman-color -Syu"
+alias pr="sudo pacman-color -Rcsndd"
+alias pil="sudo pacman-color -U"
+alias pli="sudo pacman-color -Ql"
+alias psi="sudo pacman-color -Qs"
+alias pinfo="sudo pacman-color -Si"
+alias pb='sudo pacman-color -Qqe | grep -v "$(pacman-color -Qmq)" > ~/dropbox/pklist.txt'
+alias unlockpackman="sudo rm /var/lib/pacman/db.lck"
+
+#Yaourt
+alias y="yaourt"
+alias yi="yaourt -S"
+alias ys="yaourt -Ss"
+alias yu="yaourt -Syu --aur"
+alias yr="yaourt -R"
+alias ysi="yaourt -Qs"
+
+# Startup scripts
+alias rc.d='sudo rc.d'

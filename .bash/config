@@ -1,0 +1,24 @@
+#
+# ~/.bashrc
+#
+BASH_CONF_DIR="$HOME/.bash"
+
+[ -z "$PS1" ] && return
+
+# bash prompt
+PS1=" \[\e[0;32m\]\W \[\e[1;30m\]> \[\e[0m\]"
+
+# grep color
+export GREP_COLOR="1;33"
+
+# auto-completion
+complete -cf sudo
+complete -cf man
+source /etc/bash_completion.d/git
+source /usr/share/bash-completion/completions/rc.d
+complete -F _todo t
+
+# dir colors
+eval `dircolors ~/.dircolors`
+
+source $BASH_CONF_DIR/aliases
