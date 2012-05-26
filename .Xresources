@@ -47,13 +47,16 @@ Xcursor.theme: Vainilla-DMZ-AA Xcursor.size: 22
 *color15:               S_base3
 
 !!!Config Urxvt!!!
-
-!URxvt.depth: 32
-!URxvt.background: rgba:1500/1500/1500/ffff
+URxvt.iconFile:    /home/john/.icons/Faenza/scalable/apps/terminal.svg
+URxvt.depth: 32
+URxvt.background: rgba:1111/1111/1111/dddd
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/chromium
+URxvt.matcher.button:   1
 
 *background:   #151515
 *foreground:   white
-URxvt.font: xft: Terminus:pixelsize=8:antialias=false
+URxvt.font: xft: Terminus:pixelsize=8:antialias=true
 URxvt.geometry: 80x20
 URxvt.scrollBar: true
 Urxvt.secondaryScroll: true

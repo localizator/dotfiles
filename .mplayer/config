@@ -4,41 +4,61 @@
 ## website : https://github.com/localizator
 #
 
-#General setup
+# general prefs
+#really-quiet=1          # silence console output
+ontop=1                  # always keep mplayer on top
+stop-xscreensaver=yes    # disable xscreensaver
+#geometry=50%:50%        # position window (50%:50%: center of screen)
 
-ao="alsa"
-mixer-channel="Master"
-srate="48000"
-
-######################
-# Only catalyst users
-#vo="vaapi:gl"
-#va="vaapi"
-#####################
-lavdopts="fast=1:skiploopfilter=all:threads=4"
-zoom="1"
-aid="1"
-#sid="0"
-
-#Display
-monitoraspect="4:3"
-
-subcp="UTF-8"
-font="/usr/share/fonts/truetype/msttcorefonts/impact.ttf"
-ffactor="10"
-sub-bg-alpha="0"
-sub-bg-color="0"
-subfont-text-scale="3.7"
-subfont-blur="1"
-subpos="90"
-subalign="2"
-slang="uk"
-
-ontop="1"
-
+# sets postprocessing into overdrive using all 
+# possible spare cpu cycles to make the movie look better
 autoq="100"
 vf="pp=de,hqdn3d"
-stop-xscreensaver="no"
+
+# audio prefs
+#volstep=5                # step size of mixer volume changes in %
+ao=alsa                   # audio out
+af=surround
+ac=ffac3,ffaac,hwac3,divx,mp3
+mixer-channel="Master"
+srate="48000"
+aid="1"
+
+# video prefs
+vo=gl:yuv=2:force-pbo:ati-hack               # video out method
+vf=screenshot
+vc=ffh264,ffmpeg,ffodivx,divx,mpeg4,xvid,mp42
+scale=1280:1024:interlaced=1
+#vo="vaapi:gl"          # only catalyst users
+#va="vaapi"             # only catalyst users
+zoom=yes                # sofware scaling
+sid=0                   # subtitle set
+double=yes              # double buffering (recommended for subtitles)
+monitoraspect=4:3       # 16:9 or or 4:3
+framedrop=1             # for slower machines
+hardframedrop=0         # toggle hard frame drop
+lavdopts="fast=1:skiploopfilter=all:threads=4"
+
+# subtitle prefs
+subcp="UTF-8"
+font="/usr/share/fonts/truetype/msttcorefonts/impact.ttf"
+#osdlevel=3              # start with all osd elements enabled (time/remaining)
+subpos=90               # by default subtitles are too low (100 is lowest)
+subalign=2              # alignment (2 is bottom)
+sub-fuzziness=1         # find subtitle files (1: load all subs containing movie name)
+slang=uk                # language priorities (format varies by standard)
+unicode=yes             # subtitle file encoding
+utf8=yes                # subtitle file encoding
+spuaa=4                 # vobsub antialias subs (4: best and slowest)
+spualign=-1             # vobsub align subs. (-1: as they want to align themselves)
+ffactor=10              # sub outline size (1: narrow black outline)
+subfont-blur=1          # font blur radius. (default: 2)
+subfont-outline=2       # font outline thickness. (default: 2)
+subfont-text-scale=5    # ttf scaling autoscale coefficient. (default: 5)
+subfont-osd-scale=2.7   # osd autoscale coefficient. (default: 6)
+subfont-encoding=unicode # font encoding
+sub-bg-alpha="0"
+sub-bg-color="0"
 
 [extension.mkv]
 fs="yes"

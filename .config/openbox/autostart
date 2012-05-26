@@ -51,7 +51,7 @@ tint2 &
 screensaveroff &
 volumeicon -b &
 setxkbmap -option grp:alt_shift_toggle,lv3:ralt_switch,grp_led:scroll us,ua,ru &
-#pcmanfm --desktop &
+pcmanfm --daemon-mode &
 parcellite &
 #nitrogen --restore &
 feh  --bg-scale '/mnt/vol3/doc/wallpapers/wallpaper-15497.jpg' 

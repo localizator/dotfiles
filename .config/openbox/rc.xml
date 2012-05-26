@@ -279,6 +279,24 @@
         <desktop>yes</desktop>
       </action>
     </keybind>
+    <keybind key="C-r">
+      <action name="Execute">
+        <command>recordmydesktop --fps 30</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Record</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="C-s">
+      <action name="Execute">
+        <command>recordmydesktop --stop</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>Record Stop</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="W-f">
       <action name="Execute">
         <command>pcmanfm %U</command>

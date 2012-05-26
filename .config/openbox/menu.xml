@@ -11,7 +11,7 @@
 		<item label="Менеджер файлів" icon="/home/john/.icons/Faenza/places/22/folder-documents.png">
 			<action name="Execute">
 				<execute>
-					pcmanfm
+					thunar
 				</execute>
 			</action>
 		</item>

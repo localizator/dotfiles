@@ -1,5 +1,10 @@
 # gui
+done_fg_color = 2
+done_bg_color = 0
+active_fg_color = 7
+active_bg_color = 2
 scgi_port = 127.0.0.1:5000
+#scgi_local = ~/.rtorrent_rdp/rpc.socket
 encoding_list = UTF-8
 
 # Мінімальна кількість пірів на один торрент (якщо їх буде менше, програма буде намагатися збільшити їх число до заданого)
@@ -17,14 +22,13 @@ download_rate = 0
 upload_rate = 0
 
 # Коренева тека для завантаження файлів
-directory = /mnt/vol2
+directory = /mnt/vol4
 session = /mnt/vol2/torrents/session
 
 port_range = 6881-6881
 port_random = yes
 
-check_hash = yes
-check_hash = yes
+check_hash = no
 use_udp_trackers = yes
 encryption = allow_incoming,enable_retry,prefer_plaintext
 
@@ -35,12 +39,14 @@ peer_exchange = yes
 # Показ активних завантажень/роздач
 schedule = filter_active,30,30,"view_filter = active,\"or={d.get_up_rate=,d.get_down_rate=}\""
 
+schedule = watch_directory,10,30,load_start=~/Завантаження/*.torrent
+
 # Завершення програми при нестачі вільного місця
-schedule = low_diskspace,5,60,close_low_diskspace=500M
+schedule = low_diskspace,5,60,close_low_diskspace=200M
 
 # Автоматичне завантаження торрентів
 schedule = watch_directory_1,5,5,"load_start=/mnt/vol2/torrents/auto/anime/*.torrent,d.set_directory=/mnt/vol2/anime"
-schedule = watch_directory_2,5,5,"load_start=/mnt/vol2/torrents/auto/films/*.torrent,d.set_directory=/mnt/vol2/films"
+schedule = watch_directory_2,5,5,"load_start=/mnt/vol2/torrents/auto/films/*.torrent,d.set_directory=/mnt/vol4"
 schedule = watch_directory_3,5,5,"load_start=/mnt/vol2/torrents/auto/games/*.torrent,d.set_directory=/mnt/vol2/games"
 schedule = watch_directory_4,5,5,"load_start=/mnt/vol2/torrents/auto/music/*.torrent,d.set_directory=/mnt/vol2/music"
 schedule = watch_directory_5,5,5,"load_start=/mnt/vol2/torrents/auto/soft/*.torrent,d.set_directory=/mnt/vol2/soft"
