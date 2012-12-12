@@ -1,3 +1,5 @@
+~/.* dotfiles
+
 Clean
 ![Screenshot](https://github.com/localizator/dotfiles/raw/master/screenshot.png "screenshot")
 
